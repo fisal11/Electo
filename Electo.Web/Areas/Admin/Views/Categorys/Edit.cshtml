@@ -1,0 +1,23 @@
+﻿@model Electo.PL.Models.CategoryVM
+@{
+    ViewBag.Title = "Edit";
+}
+<h1>Edit Department</h1>
+<br>
+<br>
+<form  asp-controller="Categorys" asp-action="Edit"
+  method="post">
+
+    <label asp-for="CategoryName"> Category Name </label>
+    <input type="text" asp-for="CategoryName"  class= "form-control"/>
+    <span class="text-danger" asp-validation-for="CategoryName"></span>
+    <br>
+    <center>
+     <input type="submit" value="Save" class="btn btn-primary"/>
+    </center> 
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+

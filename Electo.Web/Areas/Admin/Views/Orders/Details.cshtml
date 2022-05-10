@@ -1,0 +1,35 @@
+﻿@model Electo.PL.Models.OrderVM
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<h2>Order Details</h2>
+
+<form  asp-controller="Home" asp-action="Details" class = "form-group">
+
+    <label asp-for="City"> Brand Name</label>
+    <input type="text" asp-for="City" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Address"> Brand Name</label>
+    <input type="text" asp-for="Address" disabled class= "form-control"/>
+    <br>
+        <label asp-for="FirstName"> Brand Name</label>
+    <input type="text" asp-for="FirstName" disabled class= "form-control"/>
+    <br>
+        <label asp-for="LastName"> Brand Name</label>
+    <input type="text" asp-for="LastName" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Phone"> Brand Name</label>
+    <input type="text" asp-for="Phone" disabled class= "form-control"/>
+    <br>
+        <label asp-for="PostalCode"> Brand Name</label>
+    <input type="text" asp-for="PostalCode" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Province"> Brand Name</label>
+    <input type="text" asp-for="Province" disabled class= "form-control"/>
+     <br>
+    <center>
+     <a asp-controller="Orders" asp-action="Index" class="btn btn-primary">Back</a>
+    </center> 
+    <br>
+</form>

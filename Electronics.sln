@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Electo.Web", "Electo.Web\Electo.Web.csproj", "{70418A99-0969-46B0-B2D9-1B504C8D8B94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Electo.DAL", "Electo.DAL\Electo.DAL.csproj", "{54E9597B-CF99-4745-9FAB-52C3FD24E79E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Electo.PL", "Electo.PL\Electo.PL.csproj", "{B7BDE7DE-EA17-4168-ADF1-AB13A01C763E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70418A99-0969-46B0-B2D9-1B504C8D8B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70418A99-0969-46B0-B2D9-1B504C8D8B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70418A99-0969-46B0-B2D9-1B504C8D8B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70418A99-0969-46B0-B2D9-1B504C8D8B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54E9597B-CF99-4745-9FAB-52C3FD24E79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E9597B-CF99-4745-9FAB-52C3FD24E79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E9597B-CF99-4745-9FAB-52C3FD24E79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E9597B-CF99-4745-9FAB-52C3FD24E79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7BDE7DE-EA17-4168-ADF1-AB13A01C763E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7BDE7DE-EA17-4168-ADF1-AB13A01C763E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7BDE7DE-EA17-4168-ADF1-AB13A01C763E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7BDE7DE-EA17-4168-ADF1-AB13A01C763E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A383378-8D5E-4A41-B068-85C3F47AAD8E}
+	EndGlobalSection
+EndGlobal

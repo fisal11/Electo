@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Electo.PL.Models.CategoryVM>
+@*@using FWshop.Resource.Department
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<Resource> Resource*@
+
+@{
+     ViewBag.Title = "Categorys";
+     //var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+
+}
+
+@*@if(Culture=="en-US"){
+    <h3 style="text-align:right">
+    <a asp-controller="Department" asp-action="Index" asp-route-culture="ar-EG">
+    @Resource["Arabic"]</a>
+    </h3>
+}
+@if(Culture=="ar-EG"){
+   <h3 style="text-align:left">
+   <a asp-controller="Department" asp-action="Index" asp-route-culture="en-US">
+    @Resource["English"]</a>
+   </h3>
+}
+<br>*@
+
+<h1 style="text-align:center">All Categorys</h1>
+<br>
+<br>
+@*<table class ="table table-striped table-bordered text-center">
+    <tr>
+          <th class= "text-center"> @Resource["DepaName"]</th>
+          <th class= "text-center"> @Resource["DepCode"]</th>
+          <th class= "text-center"> @Resource["Edit"] </th>
+          <th class= "text-center"> @Resource["Delete"]</th>
+    </tr>
+    @foreach (var item in Model){
+        <tr>
+          <td class= "text-center">@item.DepartmentName</td>
+          <td class= "text-center">@item.DepartmentCode</td>
+          <td><a asp-controller="Department"asp-action="Edit"
+              asp-route-id="@item.Id" class="btn btn-primary">@Resource["Edit"]</a></td>
+          <td><a asp-controller="Department"asp-action="Delete"
+              asp-route-id="@item.Id" class="btn btn-primary">@Resource["Delete"]</a></td>
+
+        </tr>
+    }
+</table>*@
+
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                    <a asp-controller="Categorys" asp-action="Create" 
+                    class="btn btn-primary"style="margin-bottom:5px">
+                    Add Category  </a>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center table-hover js-basic-example dataTable">
+                                <thead>
+                                 <tr>
+                                  <th class= "text-center"> Category Name </th>
+                                  <th class= "text-center"> Edit </th>
+                                  <th class= "text-center"> Delete </th>
+                               </tr>
+                               </thead>
+
+                               <tbody>
+                              @foreach (var item in Model){
+                                    <tr>
+                                      <td class= "text-center">@item.CategoryName</td>
+                                      <td><a asp-controller="Categorys" asp-action="Edit"
+                                          asp-route-id="@item.Id" class="btn btn-primary">Edit</a></td>
+                                      <td><a asp-controller="Categorys"asp-action="Delete"
+                                          asp-route-id="@item.Id" class="btn btn-primary">Delete</a></td>
+                                    </tr>
+                                }
+
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   @section DataTableSectionDepartment{
+    <script>
+        $(function () {
+            $('.js-basic-example').DataTable({
+                responsive: true,
+                paging: true,
+                pageLength: 3,
+                bSort: true,
+                bFilter: true,
+                //bLengthChange: false,
+                //bInfo: false,
+                lengthMenu: [[3, 5, 10, 25, 50, -1], [3, 5, 10, 25, 50, "All"]],
+
+            });
+        });
+    </script>
+}
+

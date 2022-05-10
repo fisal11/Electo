@@ -1,0 +1,15 @@
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\Electo.DAL.deps.json
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\Electo.DAL.runtimeconfig.json
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\Electo.DAL.runtimeconfig.dev.json
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\Electo.DAL.dll
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\ref\Electo.DAL.dll
+C:\Users\moham\source\repos\Electronics\Electo.DAL\bin\Debug\net5.0\Electo.DAL.pdb
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.csproj.AssemblyReference.cache
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.AssemblyInfoInputs.cache
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.AssemblyInfo.cs
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.csproj.CoreCompileInputs.cache
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.dll
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\ref\Electo.DAL.dll
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.pdb
+C:\Users\moham\source\repos\Electronics\Electo.DAL\obj\Debug\net5.0\Electo.DAL.genruntimeconfig.cache

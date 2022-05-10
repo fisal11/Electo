@@ -1,0 +1,47 @@
+﻿@model Electo.PL.Models.ProductVM
+@{
+    ViewData["Title"] = "Products";
+}
+<h1>Add Product</h1>
+<br>
+<br>
+<form  asp-controller="Products" 
+ asp-action="Create"  method="post" enctype="multipart/form-data">
+
+    <label>Product Name</label>
+    <input type="text" asp-for="Name" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <br>
+    <label>Product Salary</label>
+    <input type="text" asp-for="Salary" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Salary"></span>
+    <br>
+    <label>Product Descrption</label>
+    <input type="text" asp-for="Descrption" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Descrption"></span>
+    <br>
+    <label asp-for="PhotoUrl"> Upload Product Photo </label>
+    <input type="file" asp-for="PhotoUrl" class= "form-control" multiple/>
+    <br>
+    <br>
+    <label  asp-for="BrandId"> Brand Name </label>
+    <select class= "form-control" asp-for="BrandId" 
+     asp-items="@(SelectList)ViewBag.BrandList">
+        <option > Chooce Brand </option>
+    </select>
+    <span class="text-danger" asp-validation-for="BrandId"></span>
+    <br>
+    <br>
+    <label  asp-for="CategoryId"> Category Name </label>
+    <select class= "form-control" asp-for="CategoryId" 
+     asp-items="@(SelectList)ViewBag.CategoryList">
+        <option > Chooce Category </option>
+    </select>
+    <span class="text-danger" asp-validation-for="CategoryId"></span>
+    <br>
+    <br>
+    <center>
+     <input type="submit" value="Save" class="btn btn-primary"/>
+    </center>
+
+</form>

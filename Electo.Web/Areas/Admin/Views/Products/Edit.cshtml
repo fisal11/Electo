@@ -1,0 +1,51 @@
+﻿@model Electo.PL.Models.ProductVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+<br>
+<form  asp-controller="Products" asp-action="Edit"
+enctype="multipart/form-data" method="post">
+
+    <label asp-for="Name"> Products Name </label>
+    <input type="text" asp-for="Name"  class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <br>
+
+    <label asp-for="Salary"> Product Salary </label>
+    <input type="text" asp-for="Salary"  class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Salary"></span>
+    <br>
+    <label asp-for="Descrption"> Product Descrption </label>
+    <input type="text" asp-for="Descrption"  class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Descrption"></span>
+    <br>
+    <label asp-for="PhotoUrl"> Upload Product Photo </label>
+    <input type="file" asp-for="PhotoUrl" class= "form-control" multiple/>
+    <span class="text-danger" asp-validation-for="Image"></span>
+    <br>
+    <label  asp-for="BrandId"> Brand Name </label>
+    <select class= "form-control" asp-for="BrandId" 
+     asp-items="@(SelectList)ViewBag.BrandList">
+        <option > Chooce Brand </option>
+    </select>
+    <span class="text-danger" asp-validation-for="BrandId"></span>
+    <br><br>
+    <label  asp-for="CategoryId"> Category Name </label>
+    <select class= "form-control" asp-for="CategoryId" 
+     asp-items="@(SelectList)ViewBag.CategoryList">
+        <option > Chooce Category </option>
+    </select>
+    <span class="text-danger" asp-validation-for="CategoryId"></span>
+    <br><br>
+    <center>
+     <input type="submit" value="Save" class="btn btn-primary"/>
+    </center> 
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+
+

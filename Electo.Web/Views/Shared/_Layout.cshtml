@@ -1,0 +1,154 @@
+﻿@using Electo.PL.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Electo</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/bootstrap.min.css" />
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/slick-theme.css" />
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/nouislider.min.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="~/TempStyle/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/style.css" />
+</head>
+<body>
+    <header>
+        <!-- TOP HEADER -->
+        <div id="top-header">
+            <div class="container">
+                <ul class="header-links pull-left">
+                    <li>
+                        <a asp-controller="Home" asp-action="Contect" >
+                        <i class="fa fa-envelope-o"></i> Contact Us </a>
+
+                     </li>
+                     <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+
+                </ul>
+                <ul class="header-links pull-right">
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </div>
+        <!-- /TOP HEADER -->
+        <!-- MAIN HEADER -->
+        <div id="header">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- LOGO -->
+                    <div class="col-md-3">
+                        <div class="header-logo">
+                            <a asp-controller="Home" asp-action="Index" class="logo">
+                                <img src="~/TempStyle/img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /LOGO -->
+                    <!-- SEARCH BAR -->
+                    <div class="col-md-6">
+                        <div class="header-search">
+                            
+                            <form asp-controller="Home"asp-action="Search" method="post">
+                                <input  class="input" name="searchName" placeholder="Search here">
+                                <button type="submit" class="search-btn">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /SEARCH BAR -->
+                    <!-- ACCOUNT -->
+                    <div class="col-md-3 clearfix">
+                        <div class="header-ctn">
+                            <!-- Wishlist -->
+                            <div>
+                                <a href="#">
+                                    <span>عربى</span>
+                                </a>
+                            </div>
+                            <!-- /Wishlist -->
+                            <!-- Cart -->
+                            <div class="dropdown">
+                                <a class="fa fa-shopping-cart" asp-controller="Home"
+                                 asp-action="Cart">
+                                      
+                                    <span>Your Cart</span>
+                                </a>
+                            </div>
+                            <!-- /Cart -->
+                        </div>
+                    </div>
+                    <!-- /ACCOUNT -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- /MAIN HEADER -->
+        <!-- NAVIGATION -->
+        <nav id="navigation">
+            <!-- container -->
+            <div class="container">
+                <!-- responsive-nav -->
+                <div id="responsive-nav">
+                    <!-- NAV -->
+                    <ul class="main-nav nav navbar-nav">
+                        @foreach (var item in Model)
+                        {
+                            <li> 
+                                <a asp-controller="Home" asp-route-id="@item.Id"
+                                 asp-action="GetProductByCategory">@item.CategoryName</a>
+                            </li>
+                        }
+                        <li class ="dropdown">
+                            <a href="#"class="dropdown-toggle" data-toggle="dropdown" >Breands</a>
+                            <ul class ="dropdown-menu" role="menu">
+                                <li>
+                                  @*@foreach (var item in Model)
+                                  {*@
+                                    <a asp-controller="Home"asp-action="GetAllPrands">
+                                        BrandName</a>
+                                @*  }*@
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- /NAV -->
+                </div>
+                <!-- /responsive-nav -->
+            </div>
+            <!-- /container -->
+        </nav>
+        <!-- /NAVIGATION -->
+    </header>
+
+    @RenderBody()
+
+    <!-- jQuery Plugins -->
+    <script src="~/TempStyle/js/jquery.min.js"></script>
+    <script src="~/TempStyle/js/bootstrap.min.js"></script>
+    <script src="~/TempStyle/js/slick.min.js"></script>
+    <script src="~/TempStyle/js/nouislider.min.js"></script>
+    <script src="~/TempStyle/js/jquery.zoom.min.js"></script>
+    <script src="~/TempStyle/js/main.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿@model Electo.Web.Models.Contectus
+@{
+    ViewData["Title"]= "Contect Us";
+    Layout = null;
+ }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Electo</title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/bootstrap.min.css" />
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/slick-theme.css" />
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/nouislider.min.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="~/TempStyle/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="~/TempStyle/css/style.css" />
+</head>
+<body>
+    <header>
+        <!-- TOP HEADER -->
+        <div id="top-header">
+            <div class="container">
+                <ul class="header-links pull-left">
+                </ul>
+                <ul class="header-links pull-right">
+                    <partial name="_LoginPartial" />
+                </ul>
+            </div>
+        </div>
+        <!-- /TOP HEADER -->
+        <!-- MAIN HEADER -->
+        <div id="header">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- LOGO -->
+                    <div class="col-md-3">
+                        <div class="header-logo">
+                            <a href="#" class="logo">
+                                <img src="~/TempStyle/img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /LOGO -->
+            
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- /MAIN HEADER -->
+        <!-- NAVIGATION -->
+        <nav id="navigation">
+            <!-- container -->
+            <div class="container">
+                <!-- responsive-nav -->
+                <div id="responsive-nav">
+                    <!-- NAV -->
+                    <ul class="main-nav nav navbar-nav">
+
+                    </ul>
+                    <!-- /NAV -->
+                </div>
+                <!-- /responsive-nav -->
+            </div>
+            <!-- /container -->
+        </nav>
+        <!-- /NAVIGATION -->
+    </header>
+<div class="container">
+    <h3 style="color:red">
+     @TempData["Mess"]
+</h3>
+<h2>Contect</h2>
+    <form  asp-controller="Home" asp-action="Contect" method="post">
+    <label asp-for="Name">Name</label>
+    <input type="text" asp-for="Name" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Name"></span>
+    <br>
+    <label asp-for="Email">Email</label>
+    <input type="text" asp-for="Email" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="Email"></span>
+    <br><br>
+    <label asp-for="Message">Message</label>
+    <textarea asp-for="Message" class= "form-control" rows="4"></textarea>
+    <span class="text-danger" asp-validation-for="Message"></span>
+    <br><br>
+    <center>
+     <input type="submit" value="Send" class="btn btn-primary"/>
+    </center>
+    </form>
+</div>
+
+    <!-- jQuery Plugins -->
+    <script src="~/TempStyle/js/jquery.min.js"></script>
+    <script src="~/TempStyle/js/bootstrap.min.js"></script>
+    <script src="~/TempStyle/js/slick.min.js"></script>
+    <script src="~/TempStyle/js/nouislider.min.js"></script>
+    <script src="~/TempStyle/js/jquery.zoom.min.js"></script>
+    <script src="~/TempStyle/js/main.js"></script>
+
+</body>
+</html>
+

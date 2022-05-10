@@ -1,0 +1,41 @@
+﻿@model Electo.PL.Models.ProductVM
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Product Details</h2>
+<br>
+<form  asp-controller="Products"  asp-action="Details">
+
+    <label asp-for="Name"> Products Name </label>
+    <input type="text" asp-for="Name" disabled class= "form-control"/>
+    <br>
+    <label asp-for="Salary"> Product Salary </label>
+    <input type="text" asp-for="Salary" disabled class= "form-control"/>
+   
+    <br/>
+    <label asp-for="Descrption">Product Descrption</label>
+    <input type="text" asp-for="Descrption" disabled class= "form-control"/>
+    
+    <br>
+    <label asp-for="Image">Photo </label>
+    <div>
+        <img src="~/Files/Photos/@Model.Image"
+         width="100" height="120"/>
+    </div>
+    <br>
+    <label asp-for="BrandName">Brand Name </label>
+    <input type="text" asp-for="BrandName" disabled class= "form-control"/>
+    
+    <br>
+    <label asp-for="CategoryName">Category Name</label>
+    <input type="text" asp-for="CategoryName" disabled class= "form-control"/>
+
+    <br>
+    <br>
+    <center>
+     <a asp-controller="Products" asp-action="Index" class="btn btn-primary">Back</a>
+    </center> 
+    <br>
+     
+</form>

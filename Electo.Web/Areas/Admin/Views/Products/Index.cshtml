@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Electo.PL.Models.ProductVM>
+@using Electo.Web.Areas.Admin.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> SharedResource
+
+@{
+     ViewBag.Title = "Product";
+     var Culture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+
+@if(Culture=="en-US"){
+    <h3 style="text-align:right">
+    <a asp-controller="Products" asp-action="Index" asp-route-culture="ar-EG">
+    @SharedResource["Arabic"]</a>
+    </h3>
+}
+@if(Culture=="ar-EG"){
+   <h3 style="text-align:left">
+   <a asp-controller="Products" asp-action="Index" asp-route-culture="en-US">
+    @SharedResource["English"]</a>
+   </h3>
+}
+<br>
+
+<h1 style="text-align:center"> @SharedResource["AllProduct"]</h1>
+<br>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                    <a asp-controller="Products" asp-action="Create" 
+                    class="btn btn-primary"style="margin-bottom:5px">
+                 @SharedResource["AddProduct"]</a>
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center table-hover js-basic-example dataTable">
+                                <thead>
+                                 <tr>
+                                  <th class= "text-center">@SharedResource["ProudctName"]</th>
+                                  <th class= "text-center">@SharedResource["BrandName"]</th>
+                                  <th class= "text-center">@SharedResource["CategoryName"]</th>
+                                  <th class= "text-center">@SharedResource["Image"]</th>
+                                  <th class= "text-center">@SharedResource["Edit"]</th>
+                                  <th class= "text-center">@SharedResource["Delete"]</th>
+                                  <th class= "text-center">@SharedResource["Details"]</th>
+
+                               </tr>
+                               </thead>
+
+                               <tbody>
+                              @foreach (var item in Model){
+                                    <tr>
+                                      <td class= "text-center">@item.Name</td>
+                                      <td class= "text-center">@item.BrandName</td>
+                                      <td class= "text-center">@item.CategoryName</td>
+                                      <td> 
+                                     <img src="~/Files/Photos/@item.Image" width="50" height="40"/></td>
+                                      <td><a asp-controller="Products" asp-action="Edit"
+                                          asp-route-id="@item.Id" class="btn btn-primary">@SharedResource["Edit"]</a></td>
+                                      <td><a asp-controller="Products"asp-action="Delete"
+                                          asp-route-id="@item.Id" class="btn btn-primary">@SharedResource["Delete"]</a></td>
+                                      <td><a asp-controller="Products"asp-action="Details"
+                                          asp-route-id="@item.Id" class="btn btn-primary">@SharedResource["Details"]</a></td>
+
+                                    </tr>
+                                }
+
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+   @section DataTableSectionDepartment{
+    <script>
+        $(function () {
+            $('.js-basic-example').DataTable({
+                responsive: true,
+                paging: true,
+                pageLength: 3,
+                bSort: true,
+                bFilter: true,
+                //bLengthChange: false,
+                //bInfo: false,
+                lengthMenu: [[3, 5, 10, 25, 50, -1], [3, 5, 10, 25, 50, "All"]],
+
+            });
+        });
+    </script>
+}
+

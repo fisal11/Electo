@@ -1,0 +1,218 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+
+            <!-- section title -->
+  
+           <div class="col-md-12">
+               <div class="section-title">
+                    <h3 class="title">@item.BrandName</h3>
+               </div>
+           </div>
+            <!-- /section title -->
+            <!-- Products tab & slick -->
+            <div class="col-md-12">
+                <div class="row">
+                 
+                    <div class="products-tabs">
+                        <!-- tab -->
+                        <div id="tab1" class="tab-pane active">
+                           
+                            <div class="products-slick" >
+                           @foreach (var itemP in item.Product)
+                               {
+                                <!-- product -->
+                                <div class="product">
+                                  
+                                    <div class="product-img">
+                                        <img src="~/Files/Photos/@itemP.Image" alt="">
+                                        <div class="product-label">
+                                            <span class="sale">-30%</span>
+                                            <span class="new">NEW</span>
+                                        </div>
+                                    </div>
+                                    <div class="product-body">
+
+                                        <h3 class="product-name"><a href="#">@itemP.Name</a></h3>
+                                        <h4 class="product-price">$@itemP.Salary</h4>
+                                     
+                                        <div class="product-btns">
+                                             <button class="quick-view">
+                                                <a asp-controller="Home" asp-action="PDetails" 
+                                                asp-route-id="@itemP.Id"  class="fa fa-eye"></a>
+                                                <span class="tooltipp">Details</span>
+                                            </button>
+                                        </div>
+                                       <form action="/Home/AddToCart" method="post">
+                                           <input type="hidden" id="ProductId" name="ProductId" value="@itemP.Id">
+                                           <div class="form-group">
+                                               <label class="control-label" for="Quantity">Quantity: </label>
+                                               <input name="Quantity" id="Quantity" required min="1"
+                                                max="3000" type="number"class="input-small">
+                                           </div>
+                                           <div class="add-to-cart">
+                                               <button class="add-to-cart-btn">
+                                               <i class="fa fa-shopping-cart">
+
+                                               </i> add to cart</button>
+                                           </div>
+                                       </form>
+                                    </div>
+                                    
+                                </div>
+                                <!-- /product -->
+                               }
+                            </div>
+                            <div id="slick-nav-1" class="products-slick-nav"></div>
+                        </div>
+                        <!-- /tab -->
+                    </div>
+                                   
+                   
+                </div>
+            </div>
+            <!-- Products tab & slick -->
+            
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+    </div>
+}
+<!-- NEWSLETTER -->
+@if (!User.Identity.IsAuthenticated)
+{
+  <div id="newsletter" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="newsletter">
+                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                    <ul class="newsletter-follow">
+                        <li>
+                            <a asp-controller ="Account"
+                            asp-action="FacebookLogin"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a asp-controller ="Account"
+                            asp-action="GoogleLogin"><i class="fa fa-google"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>  
+}
+<br>
+<!-- /NEWSLETTER -->
+<!-- FOOTER -->
+<footer id="footer">
+    <!-- top footer -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">About Us</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet,
+                            consectetur adipisicing elit.
+                        </p>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Categories</h3>
+                        <ul class="footer-links">
+                           
+                                @foreach (var item in Model)
+                               {
+                                    <li>
+                               <a asp-controller="Home" asp-route-id="@item.Id"
+                                 asp-action="GetProductByCategory">@item.CategoryName</a>
+                              </li>  
+                               }
+                             
+                            <li><a href="#">Breands</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Information</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a asp-controller="Home" asp-action="Contect">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Service</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">My Account</a></li>
+                            <li><a asp-controller="Home"asp-action="Cart">View Cart</a></li>
+                            <li><a href="#">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /top footer -->
+    <!-- bottom footer -->
+    <div id="bottom-footer" class="section">
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <ul class="footer-payments">
+                        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+                        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+                        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+                    </ul>
+                    <span class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </span>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /bottom footer -->
+</footer>
+<!-- /FOOTER -->

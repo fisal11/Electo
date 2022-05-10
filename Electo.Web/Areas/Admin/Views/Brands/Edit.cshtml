@@ -1,0 +1,23 @@
+﻿@model Electo.PL.Models.BrandVM
+@{
+    ViewBag.Title = "Edit";
+}
+<h1>Edit Brand</h1>
+<br>
+<br>
+<form  asp-controller="Brands" asp-action="Edit"
+  method="post">
+
+    <label asp-for="BrandName"> Brand Name </label>
+    <input type="text" asp-for="BrandName"  class= "form-control"/>
+    <span class="text-danger" asp-validation-for="BrandName"></span>
+    <br>
+    <center>
+     <input type="submit" value="Save" class="btn btn-primary"/>
+    </center> 
+</form>
+
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+

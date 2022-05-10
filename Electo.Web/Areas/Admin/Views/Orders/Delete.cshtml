@@ -1,0 +1,37 @@
+﻿@model Electo.DAL.Entities.Order
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete Order </h1>
+<br>
+<br>
+<form  asp-controller="Orders" asp-action="Delete" method="post" 
+ class = "form-group">
+
+    <label asp-for="City"> Brand Name</label>
+    <input type="text" asp-for="City" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Address"> Brand Name</label>
+    <input type="text" asp-for="Address" disabled class= "form-control"/>
+    <br>
+        <label asp-for="FirstName"> Brand Name</label>
+    <input type="text" asp-for="FirstName" disabled class= "form-control"/>
+    <br>
+        <label asp-for="LastName"> Brand Name</label>
+    <input type="text" asp-for="LastName" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Phone"> Brand Name</label>
+    <input type="text" asp-for="Phone" disabled class= "form-control"/>
+    <br>
+        <label asp-for="PostalCode"> Brand Name</label>
+    <input type="text" asp-for="PostalCode" disabled class= "form-control"/>
+    <br>
+        <label asp-for="Province"> Brand Name</label>
+    <input type="text" asp-for="Province" disabled class= "form-control"/>
+    <br>
+    <center>
+     <input type="submit" value="Delete" class="btn btn-danger"/>
+    </center> 
+</form>

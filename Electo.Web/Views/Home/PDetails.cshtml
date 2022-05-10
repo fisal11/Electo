@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Electo.PL.Models.ProductVM>
+@{
+    ViewData["Title"] = "PDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@foreach(var item in Model){
+	<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- Product main img -->
+					<div class="col-md-5 col-md-push-2">
+						<div id="product-main-img">
+							<div  class="product-preview">
+								<img  src="~/Files/Photos/@item.Image" alt="">
+							</div>
+						</div>
+					</div>
+					<!-- /Product main img -->
+					<!-- Product details -->
+					<div class="col-md-5 col-md-push-2">
+						<div class="product-details">
+							<h2 asp-for="Name"class="product-name">@item.Name</h2>
+							<div>
+								<div class="product-rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+							</div>
+							<div>
+								<h3 asp-for="Salary" class="product-price">$@item.Salary</h3>
+							</div>
+							<p asp-for="Descrption">@item.Descrption</p>
+							<br>
+                            <form action="/Home/AddToCart" method="post">
+                                <input type="hidden" id="ProductId" name="ProductId" value="@item.Id">
+                                      <div class="form-group">
+                                         <label class="control-label" for="Quantity">Quantity:</label>
+                                         <input name="Quantity" id="Quantity" required min="1" max="3000" type="number"class="input-small">
+                                      </div>
+                                    <div class="add-to-cart">
+                                   <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                 </div>
+                             </form>
+						</div>
+					</div>
+					<!-- /Product details -->
+
+					<!-- Product tab -->
+					<div class="col-md-12">
+						<div id="product-tab">
+							<!-- product tab nav -->
+							<ul class="tab-nav">
+								<li class="active">
+									<a data-toggle="tab" href="#tab1">Descrption</a>
+							    </li>
+							</ul>
+							<!-- /product tab nav -->
+
+							<!-- product tab content -->
+							<div class="tab-content">
+								<!-- tab1  -->
+								<div id="tab1" class="tab-pane fade in active">
+									<div class="row">
+										<div class="col-md-12">
+											<p>@item.Descrption</p>
+										</div>
+									</div>
+								</div>
+								<!-- /tab1  -->
+
+								<!-- tab2  -->
+								<div id="tab2" class="tab-pane fade in">
+									<div class="row">
+										<div class="col-md-12">
+											<p>@item.Descrption</p>
+										</div>
+									</div>
+								</div>
+								<!-- /tab2  -->
+
+							</div>
+							<!-- /product tab content  -->
+						</div>
+					</div>
+					<!-- /product tab -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+    <!-- /SECTION -->
+	}

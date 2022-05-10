@@ -1,0 +1,28 @@
+﻿@using Electo.DAL.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    
+     <li>
+        <div class="name" style="color:white" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">Hello @User.Identity.Name</div>
+    </li>
+
+    <li >
+        <form  class="form-inline" asp-controller="Account" asp-action="SignOut" 
+         method="post"asp-area="Identity" 
+         asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button  type="submit" class="search-btn">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+     <li><a asp-action="SignUp" asp-controller ="Account"><i class="fa fa-user-o"></i> Sign Up </a></li>
+     <li><a asp-action="SignIn" asp-controller ="Account"><i class="fa fa-user-o"></i>Sign In</a></li>
+}
+</ul>

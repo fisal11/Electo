@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "70418a99-0969-46b0-b2d9-1b504c8d8b94": {
+      "ProjectGuid": "70418a99-0969-46b0-b2d9-1b504c8d8b94",
+      "DisplayName": "Electo.Web",
+      "ColorIndex": 0
+    },
+    "54e9597b-cf99-4745-9fab-52c3fd24e79e": {
+      "ProjectGuid": "54e9597b-cf99-4745-9fab-52c3fd24e79e",
+      "DisplayName": "Electo.DAL",
+      "ColorIndex": 1
+    },
+    "b7bde7de-ea17-4168-adf1-ab13a01c763e": {
+      "ProjectGuid": "b7bde7de-ea17-4168-adf1-ab13a01c763e",
+      "DisplayName": "Electo.PL",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

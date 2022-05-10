@@ -1,0 +1,18 @@
+﻿@model Electo.PL.Models.BrandVM
+@{
+    ViewBag.Title = "Add Brand";
+}
+
+<h1>Add Brand</h1>
+<br>
+<br>
+<form asp-controller="Brands" asp-action="Create" method="post">
+
+    <label>Brand Name</label>
+    <input type="text" asp-for="BrandName" class= "form-control"/>
+    <span class="text-danger" asp-validation-for="BrandName"></span>
+    <br>
+    <center>
+     <input type="submit" value="Save" class="btn btn-primary"/>
+    </center>
+</form>

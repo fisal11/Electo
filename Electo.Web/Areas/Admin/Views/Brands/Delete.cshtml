@@ -1,0 +1,18 @@
+﻿@model Electo.PL.Models.BrandVM
+@{
+    ViewBag.Title = "Delete Brand";
+}
+
+<h1>Delete Brand </h1>
+<br>
+<br>
+<form  asp-controller="Brands" asp-action="Delete" method="post" 
+ class = "form-group">
+
+    <label asp-for="BrandName"> Brand Name</label>
+    <input type="text" asp-for="BrandName" disabled class= "form-control"/>
+    <br>
+    <center>
+     <input type="submit" value="Delete" class="btn btn-danger"/>
+    </center> 
+</form>
